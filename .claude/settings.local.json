@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Command node,npx,npm,deno,ruby,php,perl -ErrorAction SilentlyContinue)",
+      "Bash(which pwsh *)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(python3 -c ' *)",
+      "mcp__visualize__show_widget",
+      "Bash(powershell -Command \"\\(Get-Content js/data/theorems.js | Select-String 'id:'\\).Count\")",
+      "Bash(powershell -Command \"\\(Get-Content js/data/definitions.js | Select-String '^\\\\s+\\\\\"'\\).Count\")",
+      "mcp__visualize__read_me",
+      "Bash(powershell -Command \"Get-Content 'C:\\\\Users\\\\shuri\\\\.claude\\\\projects\\\\C--Users-shuri-Desktop---------\\\\e9d3a3a7-3b22-4132-b136-cc3e2cfd9e8d.jsonl' | Select-String 'trapezoid-definition' | Select-Object -First 20\")",
+      "Bash(powershell -Command ' *)",
+      "Bash(Select-Object -First 100)",
+      "Bash(grep -o \"DiagramTrapezoidDefinition.\\\\{0,3000\\\\}\" \"C:/Users/shuri/.claude/projects/C--Users-shuri-Desktop---------/e9d3a3a7-3b22-4132-b136-cc3e2cfd9e8d.jsonl\")",
+      "Bash(grep -o \"trapezoid-definition\\\\.js.\\\\{0,8000\\\\}\" \"C:/Users/shuri/.claude/projects/C--Users-shuri-Desktop---------/e9d3a3a7-3b22-4132-b136-cc3e2cfd9e8d.jsonl\")",
+      "Bash(grep -o \"height=518.\\\\{0,6000\\\\}\")",
+      "Bash(grep -o \"height=518.\\\\{0,200\\\\}\" \"C:/Users/shuri/.claude/projects/C--Users-shuri-Desktop---------/e9d3a3a7-3b22-4132-b136-cc3e2cfd9e8d.jsonl\")",
+      "Bash(grep -o '\"originalFile\":\"// def: טרפז.\\\\{0,10000\\\\}' \"C:/Users/shuri/.claude/projects/C--Users-shuri-Desktop---------/e9d3a3a7-3b22-4132-b136-cc3e2cfd9e8d.jsonl\")",
+      "Bash(grep -o \"const width=490, height=518.\\\\{0,8000\\\\}\" \"C:/Users/shuri/.claude/projects/C--Users-shuri-Desktop---------/e9d3a3a7-3b22-4132-b136-cc3e2cfd9e8d.jsonl\")",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

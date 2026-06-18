@@ -1,0 +1,89 @@
+/* css/pages/home.css – מסך הבית */
+
+.home-hero {
+  padding: 48px 0 40px;
+  text-align: center;
+}
+
+.home-hero h1 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.home-hero h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.home-hero p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* ── Grid ── */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* ── Card ── */
+.home-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-top: 2px solid var(--card-accent, var(--accent));
+  padding: 24px 22px;
+  cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.home-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+  border-top-color: var(--card-accent, var(--accent));
+}
+
+.home-card.primary    { grid-column: 1 / -1; --card-accent: var(--accent); }
+.home-card.defs       { grid-column: 1 / -1; --card-accent: var(--gold); }
+.home-card.coming-soon { opacity: 0.4; cursor: default; pointer-events: none; }
+
+.card-icon  { font-size: 1.6rem; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+
+.card-body  { display: flex; flex-direction: column; gap: 3px; }
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+.badge-soon {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1px 8px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .home-grid { grid-template-columns: 1fr; }
+  .home-card.primary, .home-card.defs { grid-column: auto; }
+  .home-hero h1 { font-size: 1.9rem; }
+}

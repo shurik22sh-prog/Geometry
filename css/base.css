@@ -1,0 +1,63 @@
+/* css/base.css – משתני עיצוב, איפוס, גופן */
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&family=Frank+Ruhl+Libre:wght@400;700;900&display=swap');
+
+:root {
+  /* Surfaces */
+  --bg:          #fafafa;
+  --surface:     #ffffff;
+  --surface-alt: #f4f4f4;
+
+  /* Borders */
+  --border:       #eeeeee;
+  --border-hover: #dddddd;
+
+  /* Text */
+  --text-primary:   #1a1a1a;
+  --text-secondary: #555555;
+  --text-muted:     #999999;
+
+  /* Accent (subtle indigo) */
+  --accent:       #6366f1;
+  --accent-light: rgba(99,102,241,0.07);
+  --accent-hover: #4f52d0;
+
+  /* Gold */
+  --gold:       #d97706;
+  --gold-light: rgba(217,119,6,0.07);
+
+  /* Category accent colours — used ONLY as thin borders/dots */
+  --category-angles:         #10b981;
+  --category-triangles:      #3b82f6;
+  --category-quadrilaterals: #8b5cf6;
+  --category-circles:        #f59e0b;
+
+  --radius:    14px;
+  --radius-sm: 9px;
+
+  /* Very subtle shadow only */
+  --shadow: 0 1px 4px rgba(0,0,0,0.05);
+
+  --transition: 0.18s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { direction: rtl; font-size: 16px; }
+
+body {
+  font-family: 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* No decorative blobs — clean background */
+.bg-canvas { display: none; }
+
+#app { position: relative; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }

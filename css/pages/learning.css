@@ -1,0 +1,245 @@
+/* css/pages/learning.css */
+
+/* ===== PLACEHOLDER (modules 2, 3) ===== */
+.placeholder-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px 24px;
+  text-align: center;
+}
+.placeholder-screen .icon { font-size: 3.5rem; opacity: 0.35; }
+.placeholder-screen h2 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+.placeholder-screen p { color: var(--text-muted); max-width: 340px; }
+
+/* ===== GAME ===== */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.game-progress { font-size: 0.88rem; color: var(--text-muted); font-weight: 600; }
+.game-score    { font-size: 0.9rem;  color: var(--accent);      font-weight: 700; }
+
+.game-diagram {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  margin-bottom: 18px;
+  min-height: 180px;
+  overflow: hidden;
+}
+.game-diagram svg {
+  max-width: 100%;
+  max-height: 280px;
+  height: auto;
+  display: block;
+}
+
+.game-question-label {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.game-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.game-option {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 13px 15px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: right;
+  line-height: 1.5;
+  transition: background var(--transition), border-color var(--transition);
+}
+.game-option:hover:not(:disabled) {
+  background: var(--surface-alt);
+  border-color: var(--border-hover);
+}
+.game-option:disabled { cursor: default; }
+
+.game-option.correct {
+  background: #d1fae5;
+  border-color: #34d399;
+  color: #065f46;
+  font-weight: 600;
+}
+.game-option.wrong {
+  background: #fee2e2;
+  border-color: #f87171;
+  color: #991b1b;
+}
+
+.game-next-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+.game-next-btn:hover { opacity: 0.87; }
+
+/* ===== RESULT ===== */
+.game-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 48px 24px 32px;
+  text-align: center;
+}
+.game-result-emoji { font-size: 3.2rem; }
+.game-result-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+.game-result-score { font-size: 1.05rem; color: var(--text-secondary); }
+
+.game-result-bar {
+  width: 100%;
+  max-width: 320px;
+  height: 10px;
+  background: var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.game-result-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 5px;
+  transition: width 0.7s ease;
+}
+
+.game-restart-btn {
+  margin-top: 8px;
+  padding: 12px 36px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: 'Assistant', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+.game-restart-btn:hover { opacity: 0.87; }
+
+/* ===== GAME 2 ===== */
+.game2-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+  font-family: 'Frank Ruhl Libre', serif;
+}
+.game2-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.g2-counter {
+  font-variant-numeric: tabular-nums;
+}
+.game2-statements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+.game2-stmt {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 11px 16px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: right;
+  line-height: 1.5;
+  width: 100%;
+  transition: background var(--transition), border-color var(--transition);
+}
+.game2-stmt:hover:not(:disabled):not(.correct):not(.wrong):not(.revealed) {
+  background: var(--surface-alt);
+  border-color: var(--border-hover);
+}
+.game2-stmt:disabled { cursor: default; }
+.game2-stmt.correct {
+  background: #d1fae5;
+  border-color: #34d399;
+  color: #065f46;
+  font-weight: 600;
+}
+.game2-stmt.wrong {
+  background: #fee2e2;
+  border-color: #f87171;
+  color: #991b1b;
+}
+.game2-stmt.revealed {
+  background: #fef9c3;
+  border-color: #fbbf24;
+  color: #78350f;
+  font-style: italic;
+}
+.game2-actions {
+  display: flex;
+  gap: 10px;
+}
+.game2-reveal-btn {
+  flex: 0 0 auto;
+  padding: 11px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.game2-reveal-btn:hover:not(:disabled) { background: var(--surface-alt); }
+.game2-reveal-btn:disabled { opacity: 0.45; cursor: default; }
+.g2-next { flex: 1; }
+
+@media (max-width: 600px) {
+  .game-options { grid-template-columns: 1fr; }
+  .game-diagram svg { max-height: 200px; }
+}

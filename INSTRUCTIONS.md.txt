@@ -1,0 +1,217 @@
+ # Geometry Learning App – Development Instructions
+
+## Overview
+
+You are building a frontend application for learning geometry (middle school and high school level). The application should present geometry theorems and definitions in a structured, navigable, and interactive way.
+
+The system must be designed for **clarity, scalability, and maintainability** from the very beginning.
+
+---
+
+## Core Development Principles
+
+### 1. Avoid Duplication
+
+* Do not repeat logic, UI components, or data structures.
+* Reuse existing functions and components whenever possible.
+* Centralize shared behavior.
+
+### 2. Reuse Code
+
+* Extract reusable logic into functions or modules.
+* Use a single source of truth for data (e.g., one data file).
+* Avoid copy-paste coding patterns.
+
+### 3. Avoid Redundancy
+
+* Do not store the same data in multiple places.
+* Do not create multiple implementations of the same feature.
+* Keep the codebase minimal and clean.
+
+### 4. Consolidate Logic
+
+* Keep related logic in one place.
+* Avoid spreading business logic across multiple files unnecessarily.
+* Separate concerns clearly:
+
+  * Data
+  * UI
+  * Logic
+
+### 5. Write Modular Code
+
+* Break the system into small, independent modules.
+* Each module should have a clear responsibility.
+* Prefer composition over large monolithic files.
+
+### 6. Build for Scalability
+
+* The system should easily support:
+
+  * Adding new theorems
+  * Adding new definitions
+  * Adding new categories
+* Avoid hardcoding content directly into HTML.
+
+### 7. No Quick Fixes
+
+* Do NOT implement hacks, patches, or temporary fixes.
+* Do NOT introduce fallback logic unless explicitly required.
+* Do NOT accumulate “legacy-style” messy code.
+
+### 8. Clean Architecture Only
+
+* No “spaghetti code”
+* No hidden dependencies
+* No implicit behavior
+
+---
+
+## Technology Requirements
+
+* Use **HTML + CSS + Vanilla JavaScript only**
+* Do NOT use frameworks (React, Vue, etc.)
+* The app can function as a simple SPA (Single Page Application)
+
+---
+
+## Project Structure
+
+/project
+
+* index.html
+* style.css
+* app.js
+* data.js
+
+---
+
+## Data Design (Very Important)
+
+All content must be stored in a structured format inside `data.js`.
+
+Example structure:
+
+```javascript
+const DATA = {
+  theorems: [
+    {
+      id: "vertical_angles",
+      text: "Vertical angles are equal",
+      category: "angles"
+    }
+  ],
+  definitions: [
+    {
+      id: "parallel_lines",
+      term: "Parallel lines",
+      definition: "Lines that never intersect"
+    }
+  ]
+};
+```
+
+Rules:
+
+* Do not hardcode content inside HTML
+* All text must come from `data.js`
+* IDs must be unique and consistent
+
+---
+
+## Text Formatting Rules
+
+The input text may contain special markers:
+
+### 1. Links
+
+* Format: `@term@`
+* Meaning: clickable link to a definition
+* Must be converted into clickable UI elements dynamically
+
+### 2. Emphasis
+
+* Format: `*text*`
+* Meaning: bold or highlighted text
+
+You must implement a parser that:
+
+* Detects these patterns
+* Converts them into proper HTML elements
+
+---
+
+## UI Requirements
+
+### Main Screen
+
+Buttons:
+
+* Geometry Theorems
+* Learning 1
+* Learning 2
+* Learning 3
+
+### Theorems Screen
+
+Buttons:
+
+* All Theorems
+* Angles & Parallel Lines
+* Triangles
+* Quadrilaterals
+* Circles
+* Definitions
+
+### Content Display
+
+* Each theorem should be displayed individually
+* Navigation between items should be simple and intuitive
+
+---
+
+## Navigation
+
+* Implement client-side navigation (no page reload required)
+* Use JavaScript to switch views/screens
+* Keep navigation logic centralized
+
+---
+
+## Rendering Rules
+
+* Render content dynamically using JavaScript
+* Do not duplicate HTML for each theorem
+* Use reusable rendering functions
+
+---
+
+## Maintainability Guidelines
+
+* Adding a new theorem should require:
+
+  * Only updating `data.js`
+  * No changes to rendering logic
+
+* Adding a new category should:
+
+  * Not break existing structure
+  * Require minimal code changes
+
+---
+
+## What to Avoid
+
+* Hardcoded UI per theorem
+* Inline JavaScript inside HTML
+* Duplicate event listeners
+* Global messy state
+* Quick patches or temporary fixes
+
+---
+
+## Goal
+
+Build a **clean, scalable, and extensible frontend system** that can grow into a full educational platform without requiring a rewrite.
+
+---

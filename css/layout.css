@@ -1,0 +1,113 @@
+/* css/layout.css – header, content area, breadcrumb */
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+.app-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  height: 58px;
+  gap: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-header .logo {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  cursor: pointer;
+  flex: 1;
+  transition: color var(--transition);
+}
+.app-header .logo:hover { color: var(--accent); }
+.app-header .logo span  { color: var(--accent); }
+
+/* ── Back button ── */
+.btn-back {
+  display: none;
+  align-items: center;
+  gap: 5px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.btn-back:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+.btn-back svg { transform: rotate(180deg); }
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+.breadcrumb-sep { opacity: 0.5; }
+.breadcrumb span { color: var(--text-secondary); }
+
+.breadcrumb-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.78rem;
+  color: var(--accent);
+  cursor: pointer;
+  transition: opacity var(--transition);
+  text-decoration: none;
+}
+.breadcrumb-link:hover { opacity: 0.7; }
+
+/* ── Content area ── */
+.content {
+  flex: 1;
+  padding: 36px 28px 64px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Wide layout for split pages: diagram touches the left screen edge */
+.content.layout-wide-left {
+  max-width: 100%;
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.layout-wide-left .section-title {
+  padding-right: 0;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.content.page-enter { animation: pageEnter 0.22s ease; }
+
+@media (max-width: 600px) {
+  .app-header { padding: 0 16px; }
+  .content { padding: 24px 16px 48px; }
+  .breadcrumb { display: none; }
+}

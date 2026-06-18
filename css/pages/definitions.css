@@ -1,0 +1,142 @@
+/* css/pages/definitions.css – רשימת הגדרות ותצוגת הגדרה בודדת */
+
+/* ===== DEFINITION CATEGORY BUTTONS ===== */
+.def-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.def-cat-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-top: 2px solid var(--border);
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  transition: transform var(--transition), border-color var(--transition);
+  font-family: 'Assistant', sans-serif;
+  text-align: right;
+}
+
+.def-cat-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+}
+
+.def-cat-btn.active {
+  border-top-color: var(--gold);
+  background: var(--surface-alt);
+}
+
+.def-cat-icon { font-size: 1.1rem; }
+.def-cat-label { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); }
+.def-cat-count { font-size: 0.72rem; color: var(--text-muted); }
+
+@media (max-width: 700px) {
+  .def-cat-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ===== DEFINITIONS GRID ===== */
+.definitions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+/* ===== DEFINITION CARD IN LIST ===== */
+.def-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-top: 2px solid var(--gold);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.def-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-hover);
+  border-top-color: var(--gold);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+/* Diagram thumbnail — fixed height so all titles align in each row */
+.def-thumb {
+  width: 100%;
+  height: 160px;
+  background: #f8f9fb;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.def-thumb svg {
+  max-width: 100%;
+  max-height: 155px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+/* Title below thumbnail */
+.def-item-title {
+  padding: 10px 12px 12px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== DEFINITION DETAIL CARD ===== */
+.definition-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 42px;
+}
+
+.definition-card .def-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.definition-card .def-body {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.definition-card .def-body strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Side-by-side with diagram */
+.definition-card.has-diagram { display: flex; flex-direction: row; align-items: center; gap: 14px; }
+.def-main { flex: 1; min-width: 0; }
+.def-diagram { flex: 0 0 340px; width: 340px; }
+.def-diagram svg { width: 100%; height: auto; border-radius: 10px; display: block; }
+
+@media (max-width: 600px) {
+  .definitions-list { grid-template-columns: 1fr 1fr; }
+  .definition-card.has-diagram { flex-direction: column; }
+  .def-diagram { flex: none; width: 100%; }
+}

@@ -1,0 +1,18 @@
+// def #35: מרובע חסום במעגל – quadrilateral with all vertices on circle
+const DiagramDefCyclicQuad = (() => {
+  function render(cfg={}) {
+    const width=490, height=340;
+    const black='#1a1a1a';
+    const cx=245, cy=165, R=145;
+    function ptOn(deg){const a=deg*Math.PI/180;return Geo.point(cx+R*Math.cos(a),cy+R*Math.sin(a));}
+    const A=ptOn(-70), B=ptOn(40), C=ptOn(155), D=ptOn(248);
+    const parts=[];
+    parts.push(`<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${black}" stroke-width="2"/>`);
+    parts.push(GeoRenderer.segment(Geo.segment(A,B),{color:black,width:2.5}));
+    parts.push(GeoRenderer.segment(Geo.segment(B,C),{color:black,width:2.5}));
+    parts.push(GeoRenderer.segment(Geo.segment(C,D),{color:black,width:2.5}));
+    parts.push(GeoRenderer.segment(Geo.segment(D,A),{color:black,width:2.5}));
+    return GeoRenderer.svg(width,height,parts.join('\n'),{background:'var(--surface,#f9f9f9)',rx:10});
+  }
+  return {render};
+})();

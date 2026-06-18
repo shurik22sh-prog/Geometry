@@ -1,0 +1,167 @@
+/* css/components.css – modal, search, badges, def-link, section headers */
+
+/* ===== MULTI-LINE THEOREM TEXT ===== */
+.text-line { display: block; margin-top: 0.35em; }
+
+/* ===== INLINE FRACTION ===== */
+.frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  font-size: 0.85em;
+  line-height: 1.15;
+  margin: 0 2px;
+}
+.frac .frac-num { border-bottom: 1.5px solid currentColor; padding: 0 4px 1px; }
+.frac .frac-den { padding: 1px 4px 0; }
+
+.frac-inline { color: #2D5FA6; white-space: nowrap; font-weight: bold; }
+.text-line:has(.frac-inline) { display: block; text-align: center; font-size: 1.4em; margin-top: 0.5em; }
+
+/* ===== SECTION HEADERS ===== */
+.section-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.section-subtitle { color: var(--text-muted); margin-bottom: 22px; font-size: 0.9rem; }
+
+/* ===== CATEGORY BADGES ===== */
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 11px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.category-badge.angles         { color: var(--category-angles);         background: rgba(16,185,129,0.07);  border-color: rgba(16,185,129,0.2);  }
+.category-badge.triangles      { color: var(--category-triangles);      background: rgba(59,130,246,0.07);  border-color: rgba(59,130,246,0.2);  }
+.category-badge.quadrilaterals { color: var(--category-quadrilaterals); background: rgba(139,92,246,0.07);  border-color: rgba(139,92,246,0.2);  }
+.category-badge.circles        { color: var(--category-circles);        background: rgba(245,158,11,0.07);  border-color: rgba(245,158,11,0.2);  }
+.category-badge.definitions    { color: var(--gold);                    background: rgba(217,119,6,0.07);   border-color: rgba(217,119,6,0.2);   }
+
+/* ===== DEFINITION LINK ===== */
+.def-link {
+  color: var(--accent);
+  background: none;
+  border-radius: 3px;
+  padding: 0 3px;
+  text-decoration: none;
+  cursor: pointer;
+  font-style: italic;
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+.def-link:hover { background: var(--accent-light); }
+
+/* ===== SEARCH BAR ===== */
+.search-wrap { margin-bottom: 18px; }
+
+.search-input {
+  width: 100%;
+  padding: 9px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.95rem;
+  background: var(--surface);
+  color: var(--text-primary);
+  transition: border-color var(--transition);
+  outline: none;
+}
+.search-input:focus { border-color: var(--accent); }
+.search-input::placeholder { color: var(--text-muted); }
+
+/* ===== NO RESULTS ===== */
+.no-results { text-align: center; color: var(--text-muted); padding: 32px; font-size: 0.95rem; }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  position: relative;
+  animation: modalIn 0.18s ease;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: all var(--transition);
+}
+.modal-close:hover { border-color: var(--border-hover); color: var(--text-primary); }
+
+.modal-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-body { font-size: 1rem; line-height: 1.75; color: var(--text-secondary); }
+.modal-body strong { color: var(--text-primary); font-weight: 700; }
+
+.modal-footer {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-full-def {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 16px;
+  font-family: 'Assistant', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.modal-full-def:hover { border-color: var(--accent); color: var(--accent); }
+
+@media (max-width: 600px) { .modal { padding: 22px; } }

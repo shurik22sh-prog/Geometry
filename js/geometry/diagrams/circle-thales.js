@@ -1,0 +1,29 @@
+// c18: Inscribed angle on diameter = 90° (Thales' theorem for circles)
+const DiagramCircleThales = (() => {
+  function render(cfg={}) {
+    const width=490, height=320;
+    const black='#1a1a1a', red='#cc2222';
+    const cx=245, cy=168, R=130;
+    const O=Geo.point(cx,cy);
+    function ptOn(deg){const a=deg*Math.PI/180;return Geo.point(cx+R*Math.cos(a),cy+R*Math.sin(a));}
+    function vn(v){const l=Math.hypot(v.x,v.y);return{x:v.x/l,y:v.y/l};}
+    function rightAngle(V,t1,t2,sq=16){
+      const d1=vn({x:t1.x-V.x,y:t1.y-V.y}),d2=vn({x:t2.x-V.x,y:t2.y-V.y});
+      const p1={x:V.x+d1.x*sq,y:V.y+d1.y*sq};
+      const p2={x:p1.x+d2.x*sq,y:p1.y+d2.y*sq};
+      const p3={x:V.x+d2.x*sq,y:V.y+d2.y*sq};
+      return `<polyline points="${p1.x.toFixed(1)},${p1.y.toFixed(1)} ${p2.x.toFixed(1)},${p2.y.toFixed(1)} ${p3.x.toFixed(1)},${p3.y.toFixed(1)}" fill="none" stroke="${red}" stroke-width="2.5"/>`;
+    }
+    const A=Geo.point(cx-R,cy), B=Geo.point(cx+R,cy);
+    const C=ptOn(-65);
+    const parts=[];
+    parts.push(`<circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="${black}" stroke-width="2"/>`);
+    parts.push(GeoRenderer.segment(Geo.segment(A,B),{color:black,width:2.5}));
+    parts.push(GeoRenderer.segment(Geo.segment(A,C),{color:black,width:2}));
+    parts.push(GeoRenderer.segment(Geo.segment(B,C),{color:black,width:2}));
+    parts.push(rightAngle(C,A,B,16));
+    parts.push(GeoRenderer.point(O,{r:4,fill:black}));
+    return GeoRenderer.svg(width,height,parts.join('\n'),{background:'var(--surface,#f9f9f9)',rx:10});
+  }
+  return {render};
+})();

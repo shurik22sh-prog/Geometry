@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>גאומטריה — לומדים חכם</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+  <link rel="stylesheet" href="css/pages/theorems.css">
+  <link rel="stylesheet" href="css/pages/definitions.css">
+  <link rel="stylesheet" href="css/pages/learning.css">
+</head>
+<body>
+
+<div class="bg-canvas" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<div id="app">
+  <header class="app-header">
+    <button class="btn-back" id="btn-back" style="display:none">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+      חזרה
+    </button>
+    <div class="logo">גאומטריה<span>.</span></div>
+    <nav class="breadcrumb" id="breadcrumb"></nav>
+  </header>
+  <main class="content" id="main-content"></main>
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">✕</button>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-footer">
+      <button class="modal-full-def" id="modal-full-def">לדף ההגדרה המלאה ←</button>
+    </div>
+  </div>
+</div>
+
+<!-- Data -->
+<script src="js/data/definitions.js"></script>
+<script src="js/data/theorems.js"></script>
+<script src="js/data/game.js"></script>
+<script src="js/data/game2.js"></script>
+
+<!-- Geometry engine -->
+<script src="js/geometry/engine.js"></script>
+<script src="js/geometry/renderer.js"></script>
+
+<!-- Template system (must load before templates self-register) -->
+<script src="js/geometry/template-registry.js"></script>
+<script src="js/geometry/scene-renderer.js"></script>
+<script src="js/geometry/templates/parallel-transversal.js"></script>
+
+<!-- Legacy diagram files (migrated one-by-one to templates) -->
+<script src="js/geometry/diagrams/parallel-transversal.js"></script>
+<script src="js/geometry/diagrams/supplementary-angles.js"></script>
+<script src="js/geometry/diagrams/vertical-angles.js"></script>
+<script src="js/geometry/diagrams/corresponding-angles.js"></script>
+<script src="js/geometry/diagrams/co-interior-angles.js"></script>
+<script src="js/geometry/diagrams/triangle-inequality.js"></script>
+<script src="js/geometry/diagrams/triangle-angle-sum.js"></script>
+<script src="js/geometry/diagrams/triangle-exterior-angle.js"></script>
+<script src="js/geometry/diagrams/triangle-pythagorean.js"></script>
+<script src="js/geometry/diagrams/triangle-equal-angles-sides.js"></script>
+<script src="js/geometry/diagrams/triangle-larger-angle-side.js"></script>
+<script src="js/geometry/diagrams/triangle-altitudes.js"></script>
+<script src="js/geometry/diagrams/triangle-medians.js"></script>
+<script src="js/geometry/diagrams/triangle-median-area.js"></script>
+<script src="js/geometry/diagrams/triangle-angle-bisectors.js"></script>
+<script src="js/geometry/diagrams/triangle-perp-bisectors.js"></script>
+<script src="js/geometry/diagrams/triangle-midpoint-segment.js"></script>
+<script src="js/geometry/diagrams/triangle-midpoint-half.js"></script>
+<script src="js/geometry/diagrams/triangle-midpoint-from-mid.js"></script>
+<script src="js/geometry/diagrams/triangle-midpoint-from-half.js"></script>
+<script src="js/geometry/diagrams/triangle-isosceles.js"></script>
+<script src="js/geometry/diagrams/triangle-isosceles-apex.js"></script>
+<script src="js/geometry/diagrams/triangle-isosceles-apex-17.js"></script>
+<script src="js/geometry/diagrams/triangle-isosceles-apex-18.js"></script>
+<script src="js/geometry/diagrams/triangle-isosceles-apex-19.js"></script>
+<script src="js/geometry/diagrams/triangle-right-median.js"></script>
+<script src="js/geometry/diagrams/triangle-30-60-90.js"></script>
+<script src="js/geometry/diagrams/triangle-congruence-sas.js"></script>
+<script src="js/geometry/diagrams/triangle-congruence-asa.js"></script>
+<script src="js/geometry/diagrams/triangle-congruence-sss.js"></script>
+<script src="js/geometry/diagrams/triangle-thales.js"></script>
+<script src="js/geometry/diagrams/triangle-thales-formula.js"></script>
+<script src="js/geometry/diagrams/triangle-thales-extension.js"></script>
+<script src="js/geometry/diagrams/triangle-thales-hourglass.js"></script>
+<script src="js/geometry/diagrams/triangle-angle-bisector-theorem.js"></script>
+<script src="js/geometry/diagrams/triangle-similarity.js"></script>
+<script src="js/geometry/diagrams/triangle-similarity-aa.js"></script>
+<script src="js/geometry/diagrams/triangle-similarity-sas.js"></script>
+<script src="js/geometry/diagrams/triangle-similarity-sss.js"></script>
+<script src="js/geometry/diagrams/triangle-similarity-altitude.js"></script>
+<script src="js/geometry/diagrams/triangle-similarity-median.js"></script>
+<script src="js/geometry/diagrams/triangle-similarity-bisector.js"></script>
+<script src="js/geometry/diagrams/triangle-similarity-perimeter.js"></script>
+<script src="js/geometry/diagrams/triangle-similarity-area.js"></script>
+<script src="js/geometry/diagrams/quad-angle-sum.js"></script>
+<script src="js/geometry/diagrams/parallelogram-summary.js"></script>
+<script src="js/geometry/diagrams/parallelogram-parallel.js"></script>
+<script src="js/geometry/diagrams/parallelogram-opp-angles.js"></script>
+<script src="js/geometry/diagrams/parallelogram-opp-sides.js"></script>
+<script src="js/geometry/diagrams/parallelogram-diagonals.js"></script>
+<script src="js/geometry/diagrams/parallelogram-one-pair.js"></script>
+<script src="js/geometry/diagrams/parallelogram-adj-angles.js"></script>
+<script src="js/geometry/diagrams/rectangle-diagonals.js"></script>
+<script src="js/geometry/diagrams/rectangle-summary.js"></script>
+<script src="js/geometry/diagrams/parallelogram-eq-diagonals.js"></script>
+<script src="js/geometry/diagrams/parallelogram-right-angle.js"></script>
+<script src="js/geometry/diagrams/quad-three-right-angles.js"></script>
+<script src="js/geometry/diagrams/rhombus-summary.js"></script>
+<script src="js/geometry/diagrams/rhombus-four-sides.js"></script>
+<script src="js/geometry/diagrams/rhombus-perp-diagonals.js"></script>
+<script src="js/geometry/diagrams/rhombus-diag-bisects.js"></script>
+<script src="js/geometry/diagrams/parallelogram-perp-diag.js"></script>
+<script src="js/geometry/diagrams/parallelogram-adj-sides.js"></script>
+<script src="js/geometry/diagrams/rhombus-eq-diagonals.js"></script>
+<script src="js/geometry/diagrams/rectangle-adj-sides.js"></script>
+<script src="js/geometry/diagrams/square-summary.js"></script>
+<script src="js/geometry/diagrams/square-definition.js"></script>
+<script src="js/geometry/diagrams/kite-definition.js"></script>
+<script src="js/geometry/diagrams/kite-summary.js"></script>
+<script src="js/geometry/diagrams/kite-main-diagonal.js"></script>
+<script src="js/geometry/diagrams/kite-side-angles.js"></script>
+<script src="js/geometry/diagrams/trapezoid-summary.js"></script>
+<script src="js/geometry/diagrams/trapezoid-definition.js"></script>
+<script src="js/geometry/diagrams/trapezoid-q23.js"></script>
+<script src="js/geometry/diagrams/trapezoid-adj-angles.js"></script>
+<script src="js/geometry/diagrams/trapezoid-isosceles.js"></script>
+<script src="js/geometry/diagrams/trapezoid-eq-diagonals.js"></script>
+<script src="js/geometry/diagrams/trapezoid-midsegment.js"></script>
+<script src="js/geometry/diagrams/trapezoid-midsegment-length.js"></script>
+<script src="js/geometry/diagrams/trapezoid-midsegment-from-mid.js"></script>
+<script src="js/geometry/diagrams/def-right-angle.js"></script>
+<script src="js/geometry/diagrams/def-bisector.js"></script>
+<script src="js/geometry/diagrams/def-perpendicular.js"></script>
+<script src="js/geometry/diagrams/def-point-line-dist.js"></script>
+<script src="js/geometry/diagrams/def-parallel-lines.js"></script>
+<script src="js/geometry/diagrams/def-altitude.js"></script>
+<script src="js/geometry/diagrams/def-median.js"></script>
+<script src="js/geometry/diagrams/def-angle-bisector-def.js"></script>
+<script src="js/geometry/diagrams/def-perp-bisector.js"></script>
+<script src="js/geometry/diagrams/def-equilateral.js"></script>
+<script src="js/geometry/diagrams/def-right-triangle.js"></script>
+<script src="js/geometry/diagrams/def-rectangle.js"></script>
+<script src="js/geometry/diagrams/def-rhombus.js"></script>
+<script src="js/geometry/diagrams/def-chord.js"></script>
+<script src="js/geometry/diagrams/def-arc.js"></script>
+<script src="js/geometry/diagrams/def-sector.js"></script>
+<script src="js/geometry/diagrams/def-central-angle.js"></script>
+<script src="js/geometry/diagrams/circle-radii.js"></script>
+<script src="js/geometry/diagrams/def-circle.js"></script>
+<script src="js/geometry/diagrams/circle-diameter.js"></script>
+<script src="js/geometry/diagrams/circle-equal-chords.js"></script>
+<script src="js/geometry/diagrams/circle-c4.js"></script>
+<script src="js/geometry/diagrams/circle-c5.js"></script>
+<script src="js/geometry/diagrams/circle-compare.js"></script>
+<script src="js/geometry/diagrams/circle-c6.js"></script>
+<script src="js/geometry/diagrams/circle-c7.js"></script>
+<script src="js/geometry/diagrams/circle-c8.js"></script>
+<script src="js/geometry/diagrams/circle-perp-chord.js"></script>
+<script src="js/geometry/diagrams/circle-c10.js"></script>
+<script src="js/geometry/diagrams/circle-chord-distance.js"></script>
+<script src="js/geometry/diagrams/circle-c12.js"></script>
+<script src="js/geometry/diagrams/circle-central-inscribed.js"></script>
+<script src="js/geometry/diagrams/circle-inscribed-angles.js"></script>
+<script src="js/geometry/diagrams/circle-c15.js"></script>
+<script src="js/geometry/diagrams/circle-equal-inscribed.js"></script>
+<script src="js/geometry/diagrams/circle-c17.js"></script>
+<script src="js/geometry/diagrams/circle-thales.js"></script>
+<script src="js/geometry/diagrams/circle-tangent-radius.js"></script>
+<script src="js/geometry/diagrams/circle-two-tangents.js"></script>
+<script src="js/geometry/diagrams/circle-tangent-chord.js"></script>
+<script src="js/geometry/diagrams/circle-circumscribed.js"></script>
+<script src="js/geometry/diagrams/circle-inscribed-tri.js"></script>
+<script src="js/geometry/diagrams/circle-cyclic-quad.js"></script>
+<script src="js/geometry/diagrams/circle-cyclic-trap.js"></script>
+<script src="js/geometry/diagrams/circle-tangent-quad.js"></script>
+<script src="js/geometry/diagrams/def-congruent-triangles.js"></script>
+<script src="js/geometry/diagrams/def-tangent.js"></script>
+<script src="js/geometry/diagrams/def-circumscribed-tri.js"></script>
+<script src="js/geometry/diagrams/def-inscribed-tri.js"></script>
+<script src="js/geometry/diagrams/def-cyclic-quad.js"></script>
+<script src="js/geometry/diagrams/def-tangent-quad.js"></script>
+<script src="js/geometry/diagrams/game2-parallelogram.js"></script>
+<script src="js/geometry/diagrams/game2-isosceles.js"></script>
+<script src="js/geometry/diagrams/game2-rectangle.js"></script>
+<script src="js/geometry/diagrams/game2-right-triangle.js"></script>
+<script src="js/geometry/diagrams/game2-rhombus.js"></script>
+
+<!-- Core -->
+<script src="js/core/parser.js"></script>
+<script src="js/core/router.js"></script>
+<script src="js/core/modal.js"></script>
+
+<!-- Pages -->
+<script src="js/pages/home.js"></script>
+<script src="js/pages/theorems-menu.js"></script>
+<script src="js/pages/theorem-list.js"></script>
+<script src="js/pages/triangle-subcats.js"></script>
+<script src="js/pages/subcat-with-diagram.js"></script>
+<script src="js/pages/theorem-detail.js"></script>
+<script src="js/pages/definitions-list.js"></script>
+<script src="js/pages/definition-detail.js"></script>
+<script src="js/pages/learning.js"></script>
+
+<!-- App init -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
