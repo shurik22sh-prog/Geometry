@@ -36,24 +36,28 @@
 
 /* ── Card ── */
 .home-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  border-top: 2px solid var(--card-accent, var(--accent));
-  padding: 24px 22px;
+  background: #ffffff;
+  border: 1px solid #EAEAEA;
+  border-radius: 20px;
+  border-top: 3px solid var(--card-accent, var(--accent));
+  padding: 28px 24px;
   cursor: pointer;
-  box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  transition: all 0.2s ease;
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 16px;
 }
 
 .home-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--border-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.13), 0 2px 8px rgba(0,0,0,0.06);
+  border-color: #d0d0d0;
   border-top-color: var(--card-accent, var(--accent));
+}
+
+.home-card:active {
+  transform: scale(0.98);
 }
 
 .home-card.primary    { grid-column: 1 / -1; --card-accent: var(--accent); }
