@@ -54,7 +54,10 @@ const Parser = (() => {
     });
     const lines = text.split('\n');
     if (lines.length === 1) return text;
-    return lines[0] + lines.slice(1).map(l => `<span class="text-line">${l}</span>`).join('');
+    return lines[0] + lines.slice(1).map(l => {
+      const cls = l.startsWith('וההפך') ? 'text-line text-line-converse' : 'text-line';
+      return `<span class="${cls}">${l}</span>`;
+    }).join('');
   }
 
   function stripLinks(text) {

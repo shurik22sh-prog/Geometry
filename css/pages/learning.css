@@ -32,12 +32,13 @@
 .game-diagram {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14px;
-  margin-bottom: 18px;
+  padding: 16px;
+  margin-bottom: 20px;
   min-height: 180px;
   overflow: hidden;
 }
@@ -50,10 +51,11 @@
 
 .game-question-label {
   font-size: 0.97rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-secondary);
   margin-bottom: 14px;
   text-align: center;
+  line-height: 1.55;
 }
 
 .game-options {
@@ -65,20 +67,27 @@
 
 .game-option {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 13px 15px;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 13px;
+  padding: 14px 16px;
   font-family: 'Assistant', sans-serif;
   font-size: 0.88rem;
   color: var(--text-primary);
   cursor: pointer;
   text-align: right;
-  line-height: 1.5;
-  transition: background var(--transition), border-color var(--transition);
+  line-height: 1.55;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
 .game-option:hover:not(:disabled) {
-  background: var(--surface-alt);
-  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+  border-color: #d0d0d0;
+  background: #fafafa;
+}
+.game-option:active:not(:disabled) {
+  transform: scale(0.98);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 .game-option:disabled { cursor: default; }
 
@@ -87,28 +96,36 @@
   border-color: #34d399;
   color: #065f46;
   font-weight: 600;
+  box-shadow: 0 2px 8px rgba(52,211,153,0.18);
 }
 .game-option.wrong {
   background: #fee2e2;
   border-color: #f87171;
   color: #991b1b;
+  box-shadow: 0 2px 8px rgba(248,113,113,0.15);
 }
 
 .game-next-btn {
   display: block;
   width: 100%;
-  padding: 12px;
+  padding: 13px;
   background: var(--accent);
   color: #fff;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 13px;
   font-family: 'Assistant', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity var(--transition);
+  box-shadow: 0 2px 10px rgba(99,102,241,0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
 }
-.game-next-btn:hover { opacity: 0.87; }
+.game-next-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(99,102,241,0.32);
+  opacity: 0.95;
+}
+.game-next-btn:active { transform: scale(0.98); }
 
 /* ===== RESULT ===== */
 .game-result {
@@ -145,18 +162,24 @@
 
 .game-restart-btn {
   margin-top: 8px;
-  padding: 12px 36px;
+  padding: 13px 40px;
   background: var(--accent);
   color: #fff;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: 13px;
   font-family: 'Assistant', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: opacity var(--transition);
+  box-shadow: 0 2px 10px rgba(99,102,241,0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
 }
-.game-restart-btn:hover { opacity: 0.87; }
+.game-restart-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(99,102,241,0.32);
+  opacity: 0.95;
+}
+.game-restart-btn:active { transform: scale(0.98); }
 
 /* ===== GAME 2 ===== */
 .game2-title {
@@ -184,21 +207,26 @@
 }
 .game2-stmt {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 11px 16px;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 13px;
+  padding: 12px 16px;
   font-family: 'Assistant', sans-serif;
   font-size: 0.9rem;
   color: var(--text-primary);
   cursor: pointer;
   text-align: right;
-  line-height: 1.5;
+  line-height: 1.55;
   width: 100%;
-  transition: background var(--transition), border-color var(--transition);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
 .game2-stmt:hover:not(:disabled):not(.correct):not(.wrong):not(.revealed) {
-  background: var(--surface-alt);
-  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+  border-color: #d0d0d0;
+}
+.game2-stmt:active:not(:disabled):not(.correct):not(.wrong) {
+  transform: scale(0.98);
 }
 .game2-stmt:disabled { cursor: default; }
 .game2-stmt.correct {

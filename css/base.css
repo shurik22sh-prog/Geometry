@@ -32,13 +32,15 @@
   --category-quadrilaterals: #8b5cf6;
   --category-circles:        #f59e0b;
 
-  --radius:    14px;
-  --radius-sm: 9px;
+  --radius:    16px;
+  --radius-sm: 11px;
 
-  /* Very subtle shadow only */
-  --shadow: 0 1px 4px rgba(0,0,0,0.05);
+  /* Layered shadows for depth */
+  --shadow:    0 2px 8px rgba(0,0,0,0.10), 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.13), 0 2px 6px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 36px rgba(0,0,0,0.16), 0 4px 12px rgba(0,0,0,0.10);
 
-  --transition: 0.18s ease;
+  --transition: 0.2s ease;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,7 +52,7 @@ body {
   background: var(--bg);
   color: var(--text-primary);
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* No decorative blobs — clean background */

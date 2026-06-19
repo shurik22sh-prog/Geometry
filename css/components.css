@@ -2,6 +2,7 @@
 
 /* ===== MULTI-LINE THEOREM TEXT ===== */
 .text-line { display: block; margin-top: 0.35em; }
+.text-line-converse { margin-top: 1cm; }
 
 /* ===== INLINE FRACTION ===== */
 .frac {

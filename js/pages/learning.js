@@ -144,6 +144,12 @@ const PageLearning = (() => {
     'game2-rhombus':        () => DiagramGame2Rhombus.render({}),
   };
 
+  function pickTheoremText(rawText) {
+    const clean = cleanText(rawText);
+    const parts = clean.split(/\s*וההפך:\s*/);
+    return parts[Math.floor(Math.random() * parts.length)].trim();
+  }
+
   function buildGame2Questions() {
     return shuffle([...GAME2_SCENARIOS]).map(scenario => {
       const { categoryKey, subcat } = scenario.correctSource;
@@ -157,8 +163,8 @@ const PageLearning = (() => {
       const falseSubset = shuffle([...scenario.falseStatements]).slice(0, numFalse);
 
       const statements = shuffle([
-        ...correctTheorems.map(t => ({ text: cleanText(t.text), isCorrect: true  })),
-        ...falseSubset.map(text  => ({ text,                     isCorrect: false })),
+        ...correctTheorems.map(t => ({ text: pickTheoremText(t.text), isCorrect: true  })),
+        ...falseSubset.map(text  => ({ text,                           isCorrect: false })),
       ]);
 
       return {
