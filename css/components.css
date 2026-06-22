@@ -24,12 +24,20 @@
 .section-title {
   font-family: 'Frank Ruhl Libre', serif;
   font-size: 1.6rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
   margin-bottom: 6px;
 }
 
-.section-subtitle { color: var(--text-muted); margin-bottom: 22px; font-size: 0.9rem; }
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
 
 /* ===== CATEGORY BADGES ===== */
 .category-badge {

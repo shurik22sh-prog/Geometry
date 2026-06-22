@@ -8,10 +8,11 @@
 .home-hero h1 {
   font-family: 'Frank Ruhl Libre', serif;
   font-size: 2.4rem;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--text-primary);
-  line-height: 1.2;
-  margin-bottom: 10px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
 }
 
 .home-hero h1 em {
@@ -20,8 +21,10 @@
 }
 
 .home-hero p {
-  font-size: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
   color: var(--text-secondary);
+  font-weight: 400;
   max-width: 440px;
   margin: 0 auto;
 }
@@ -69,12 +72,19 @@
 .card-body  { display: flex; flex-direction: column; gap: 3px; }
 
 .card-title {
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
 }
 
-.card-desc { font-size: 0.85rem; color: var(--text-muted); }
+.card-desc {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.65;
+}
 
 .badge-soon {
   display: inline-block;
