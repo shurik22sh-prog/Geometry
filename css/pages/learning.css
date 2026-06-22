@@ -30,10 +30,10 @@
 .game-score    { font-size: 0.9rem;  color: var(--accent);      font-weight: 700; }
 
 .game-diagram {
-  background: var(--surface);
-  border: 1px solid #e0e0e0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 24px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: var(--shadow-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,8 +66,8 @@
 }
 
 .game-option {
-  background: #ffffff;
-  border: 1px solid #EAEAEA;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 18px 20px;
   font-family: 'Assistant', sans-serif;
@@ -76,31 +76,31 @@
   cursor: pointer;
   text-align: right;
   line-height: 1.5;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
 }
 .game-option:hover:not(:disabled) {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  border-color: #d0d0d0;
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
 }
 .game-option:active:not(:disabled) {
   transform: scale(0.97);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  box-shadow: var(--shadow);
 }
 .game-option:disabled { cursor: default; }
 
 .game-option.correct {
-  background: #d1fae5;
-  border-color: #34d399;
-  color: #065f46;
+  background: var(--state-correct-bg);
+  border-color: var(--state-correct-border);
+  color: var(--state-correct-text);
   font-weight: 600;
   box-shadow: 0 4px 14px rgba(52,211,153,0.22);
 }
 .game-option.wrong {
-  background: #fee2e2;
-  border-color: #f87171;
-  color: #991b1b;
+  background: var(--state-wrong-bg);
+  border-color: var(--state-wrong-border);
+  color: var(--state-wrong-text);
   box-shadow: 0 4px 14px rgba(248,113,113,0.18);
 }
 .game-option.selected {
@@ -113,7 +113,7 @@
   width: 100%;
   padding: 15px;
   background: var(--accent);
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 16px;
   font-family: 'Assistant', sans-serif;
@@ -121,7 +121,7 @@
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(99,102,241,0.30);
-  transition: all 0.2s ease;
+  transition: all var(--transition);
 }
 .game-next-btn:hover {
   transform: translateY(-2px);
@@ -166,7 +166,7 @@
   margin-top: 8px;
   padding: 15px 44px;
   background: var(--accent);
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 16px;
   font-family: 'Assistant', sans-serif;
@@ -174,7 +174,7 @@
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(99,102,241,0.30);
-  transition: all 0.2s ease;
+  transition: all var(--transition);
 }
 .game-restart-btn:hover {
   transform: translateY(-2px);
@@ -197,9 +197,8 @@
   color: var(--text-muted);
   margin-bottom: 10px;
 }
-.g2-counter {
-  font-variant-numeric: tabular-nums;
-}
+.g2-counter { font-variant-numeric: tabular-nums; }
+
 .game2-statements {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -207,8 +206,8 @@
   margin-bottom: 16px;
 }
 .game2-stmt {
-  background: #ffffff;
-  border: 1px solid #EAEAEA;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: 18px 20px;
   font-family: 'Assistant', sans-serif;
@@ -218,37 +217,38 @@
   text-align: right;
   line-height: 1.5;
   width: 100%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-  transition: all 0.2s ease;
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
 }
 .game2-stmt:hover:not(:disabled):not(.correct):not(.wrong):not(.revealed) {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  border-color: #d0d0d0;
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
 }
 .game2-stmt:active:not(:disabled):not(.correct):not(.wrong) {
   transform: scale(0.97);
 }
 .game2-stmt:disabled { cursor: default; }
 .game2-stmt.correct {
-  background: #d1fae5;
-  border-color: #34d399;
-  color: #065f46;
+  background: var(--state-correct-bg);
+  border-color: var(--state-correct-border);
+  color: var(--state-correct-text);
   font-weight: 600;
   box-shadow: 0 4px 14px rgba(52,211,153,0.22);
 }
 .game2-stmt.wrong {
-  background: #fee2e2;
-  border-color: #f87171;
-  color: #991b1b;
+  background: var(--state-wrong-bg);
+  border-color: var(--state-wrong-border);
+  color: var(--state-wrong-text);
   box-shadow: 0 4px 14px rgba(248,113,113,0.18);
 }
 .game2-stmt.revealed {
-  background: #fef9c3;
-  border-color: #fbbf24;
-  color: #78350f;
+  background: var(--state-reveal-bg);
+  border-color: var(--state-reveal-border);
+  color: var(--state-reveal-text);
   font-style: italic;
 }
+
 .game2-actions {
   display: flex;
   gap: 10px;
@@ -264,13 +264,13 @@
   font-weight: 600;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: all var(--transition);
+  box-shadow: var(--shadow);
 }
 .game2-reveal-btn:hover:not(:disabled) {
   background: var(--surface-alt);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+  box-shadow: var(--shadow-md);
 }
 .game2-reveal-btn:disabled { opacity: 0.45; cursor: default; }
 .g2-next { flex: 1; }

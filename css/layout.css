@@ -8,7 +8,7 @@
 
 /* ── Header ── */
 .app-header {
-  background: #ffffff;
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
   padding: 0 28px;
   display: flex;

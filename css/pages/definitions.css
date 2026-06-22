@@ -56,7 +56,7 @@
 
 /* ===== DEFINITION CARD IN LIST ===== */
 .def-item {
-  background: linear-gradient(160deg, #ffffff 55%, #f8f7ff 100%);
+  background: var(--surface-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   border-top: 2px solid var(--gold);
@@ -79,7 +79,7 @@
 .def-thumb {
   width: 100%;
   height: 160px;
-  background: #f8f9fb;
+  background: var(--surface-alt);
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;

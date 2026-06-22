@@ -165,7 +165,7 @@
 .theorem-thumb {
   width: 100%;
   height: 130px;
-  background: #f8f9fb;
+  background: var(--surface-alt);
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
