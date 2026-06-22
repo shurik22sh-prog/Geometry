@@ -2,7 +2,7 @@
 const DiagramDefTangent = (() => {
   function render(cfg={}) {
     const width=490, height=320;
-    const black='#4f52d0';
+    const black='#1a1a1a';
     const cx=230, cy=165, R=120;
     function ptOn(deg){const a=deg*Math.PI/180;return Geo.point(cx+R*Math.cos(a),cy+R*Math.sin(a));}
     const P=ptOn(0);

@@ -2,7 +2,7 @@
 const DiagramDefTangentQuad = (() => {
   function render(cfg={}) {
     const width=490, height=310;
-    const black='#4f52d0';
+    const black='#1a1a1a';
     const cx=245, cy=185, r=100;
     function ptOn(cx,cy,R,deg){const a=deg*Math.PI/180;return Geo.point(cx+R*Math.cos(a),cy+R*Math.sin(a));}
     const T1=ptOn(cx,cy,r,10), T2=ptOn(cx,cy,r,100), T3=ptOn(cx,cy,r,195), T4=ptOn(cx,cy,r,305);

@@ -2,7 +2,7 @@
 const DiagramDefBisector = (() => {
   function render(cfg={}) {
     const width=490, height=190;
-    const black='#4f52d0', blue='#2D5FA6';
+    const black='#1a1a1a', blue='#2D5FA6';
     const A = Geo.point(80, 100);
     const M = Geo.point(245, 100);
     const B = Geo.point(410, 100);

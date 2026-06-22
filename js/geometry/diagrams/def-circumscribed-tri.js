@@ -2,7 +2,7 @@
 const DiagramDefCircumscribedTri = (() => {
   function render(cfg={}) {
     const width=490, height=320;
-    const black='#4f52d0';
+    const black='#1a1a1a';
     const cx=245, cy=162, R=125;
     function ptOn(deg){const a=deg*Math.PI/180;return Geo.point(cx+R*Math.cos(a),cy+R*Math.sin(a));}
     const A=ptOn(-80), B=ptOn(40), C=ptOn(195);

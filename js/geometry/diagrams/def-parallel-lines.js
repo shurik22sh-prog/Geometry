@@ -2,7 +2,7 @@
 const DiagramDefParallelLines = (() => {
   function render(cfg={}) {
     const width=490, height=210;
-    const black='#4f52d0', orange='#FF8C00';
+    const black='#1a1a1a', orange='#FF8C00';
     function chev(seg) {
       const dx=seg.p2.x-seg.p1.x, dy=seg.p2.y-seg.p1.y, l=Math.hypot(dx,dy);
       const ux=dx/l, uy=dy/l, nx=-uy, ny=ux, sz=8;

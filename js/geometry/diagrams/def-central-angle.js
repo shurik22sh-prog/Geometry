@@ -2,7 +2,7 @@
 const DiagramDefCentralAngle = (() => {
   function render(cfg={}) {
     const width=490, height=300;
-    const black='#4f52d0', red='#cc2222';
+    const black='#1a1a1a', red='#cc2222';
     const cx=245, cy=130, r=115;
     // Two radii pointing downward: 30° and 150° (lower-left and lower-right in SVG)
     const a1=30*Math.PI/180, a2=150*Math.PI/180;

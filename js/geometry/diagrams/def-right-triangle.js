@@ -2,7 +2,7 @@
 const DiagramDefRightTriangle = (() => {
   function render(cfg={}) {
     const width=490, height=290;
-    const black='#4f52d0', red='#cc2222';
+    const black='#1a1a1a', red='#cc2222';
     const C = Geo.point(100, 235); // right angle vertex
     const A = Geo.point(100, 60);  // top
     const B = Geo.point(390, 235); // right

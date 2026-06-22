@@ -2,7 +2,7 @@
 const DiagramDefMedian = (() => {
   function render(cfg={}) {
     const width=490, height=290;
-    const black='#4f52d0', blue='#2D5FA6';
+    const black='#1a1a1a', blue='#2D5FA6';
     const A = Geo.point(200, 55);
     const B = Geo.point(80, 245);
     const C = Geo.point(410, 245);

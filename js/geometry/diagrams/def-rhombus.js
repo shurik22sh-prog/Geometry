@@ -2,7 +2,7 @@
 const DiagramDefRhombus = (() => {
   function render(cfg={}) {
     const width=490, height=300;
-    const black='#4f52d0', blue='#2D5FA6';
+    const black='#1a1a1a', blue='#2D5FA6';
     const T = Geo.point(245, 55);   // top
     const R = Geo.point(400, 165);  // right
     const Bot = Geo.point(245, 275); // bottom

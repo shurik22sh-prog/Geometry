@@ -2,7 +2,7 @@
 const DiagramDefRectangle = (() => {
   function render(cfg={}) {
     const width=490, height=280;
-    const black='#4f52d0', red='#cc2222';
+    const black='#1a1a1a', red='#cc2222';
     const A = Geo.point(80,  80);  // TL
     const B = Geo.point(410, 80);  // TR
     const C = Geo.point(410, 220); // BR

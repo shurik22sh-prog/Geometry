@@ -2,7 +2,7 @@
 const DiagramDefPerpendicular = (() => {
   function render(cfg={}) {
     const width=320, height=260;
-    const black='#4f52d0', red='#cc2222';
+    const black='#1a1a1a', red='#cc2222';
     const H = Geo.point(160, 140);
     const sq = 18;
     const parts = [];
