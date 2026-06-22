@@ -159,13 +159,10 @@ const GeoRenderer = (() => {
   // ── SVG wrapper ───────────────────────────────────────────────────────────────
 
   function svg(width, height, content, opts = {}) {
-    const bg = opts.background
-      ? el('rect', { width, height, fill: opts.background, rx: opts.rx ?? 0 })
-      : '';
+    // Background is handled by CSS (.def-thumb, .game-diagram, etc.) — no rect injected.
     return [
       `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg"`,
       `     width="${width}" height="${height}">`,
-      bg,
       content,
       '</svg>',
     ].join('\n');

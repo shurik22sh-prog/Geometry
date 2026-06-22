@@ -2,7 +2,7 @@
 const DiagramDefChord = (() => {
   function render(cfg={}) {
     const width=490, height=300;
-    const black='#1a1a1a';
+    const black='#4f52d0';
     const cx=245, cy=155, r=115;
     function pt(deg){const a=deg*Math.PI/180;return Geo.point(cx+r*Math.cos(a),cy+r*Math.sin(a));}
     const parts = [];

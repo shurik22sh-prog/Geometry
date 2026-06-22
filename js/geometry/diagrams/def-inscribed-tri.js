@@ -2,7 +2,7 @@
 const DiagramDefInscribedTri = (() => {
   function render(cfg={}) {
     const width=490, height=320;
-    const black='#1a1a1a';
+    const black='#4f52d0';
     const A=Geo.point(245,42), B=Geo.point(390,272), C=Geo.point(100,272);
     const a=Math.hypot(B.x-C.x,B.y-C.y);
     const b=Math.hypot(C.x-A.x,C.y-A.y);

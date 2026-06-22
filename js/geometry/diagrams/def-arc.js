@@ -2,7 +2,7 @@
 const DiagramDefArc = (() => {
   function render(cfg={}) {
     const width=490, height=300;
-    const black='#1a1a1a', red='#cc2222';
+    const black='#4f52d0', red='#cc2222';
     const cx=245, cy=155, r=115;
     // Arc endpoints at 200° and 340° – the highlighted arc goes through the top (270°)
     const a1=200*Math.PI/180, a2=340*Math.PI/180;

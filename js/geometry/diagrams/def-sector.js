@@ -2,7 +2,7 @@
 const DiagramDefSector = (() => {
   function render(cfg={}) {
     const width=490, height=300;
-    const black='#1a1a1a', blue='#2D5FA6', red='#cc2222';
+    const black='#4f52d0', blue='#2D5FA6', red='#cc2222';
     const cx=245, cy=165, r=115;
     // Sector from 220° to 350° CW (through top=270°), span=130°
     const a1=220*Math.PI/180, a2=350*Math.PI/180;

@@ -2,7 +2,7 @@
 const DiagramDefEquilateral = (() => {
   function render(cfg={}) {
     const width=490, height=310;
-    const black='#1a1a1a', blue='#2D5FA6', red='#cc2222';
+    const black='#4f52d0', blue='#2D5FA6', red='#cc2222';
     const A = Geo.point(245, 55);
     const B = Geo.point(125, 265);
     const C = Geo.point(365, 265);

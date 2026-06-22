@@ -2,7 +2,7 @@
 const DiagramDefCyclicQuad = (() => {
   function render(cfg={}) {
     const width=490, height=340;
-    const black='#1a1a1a';
+    const black='#4f52d0';
     const cx=245, cy=165, R=145;
     function ptOn(deg){const a=deg*Math.PI/180;return Geo.point(cx+R*Math.cos(a),cy+R*Math.sin(a));}
     const A=ptOn(-70), B=ptOn(40), C=ptOn(155), D=ptOn(248);

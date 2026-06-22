@@ -2,7 +2,7 @@
 const DiagramDefPointLineDist = (() => {
   function render(cfg={}) {
     const width=490, height=250;
-    const black='#1a1a1a', red='#cc2222', blue='#2D5FA6';
+    const black='#4f52d0', red='#cc2222', blue='#2D5FA6';
     const Px=245, Py=60, Fx=245, Fy=195;
     const sq = 16;
     const parts = [];

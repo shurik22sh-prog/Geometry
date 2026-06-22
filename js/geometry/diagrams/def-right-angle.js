@@ -2,7 +2,7 @@
 const DiagramDefRightAngle = (() => {
   function render(cfg={}) {
     const width=320, height=260;
-    const black='#1a1a1a', red='#cc2222';
+    const black='#4f52d0', red='#cc2222';
     const V = Geo.point(110, 195);
     const R = Geo.point(280, 195);
     const U = Geo.point(110, 50);

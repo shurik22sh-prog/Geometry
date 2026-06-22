@@ -2,7 +2,7 @@
 const DiagramDefPerpBisector = (() => {
   function render(cfg={}) {
     const width=490, height=490;
-    const black='#1a1a1a', blue='#2D5FA6', red='#cc2222';
+    const black='#4f52d0', blue='#2D5FA6', red='#cc2222';
     const parts = [];
 
     // ── TOP: segment AB with perpendicular bisector ───────────────────────────
