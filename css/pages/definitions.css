@@ -9,29 +9,34 @@
 }
 
 .def-cat-btn {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.5);
   border-radius: var(--radius);
-  border-top: 2px solid var(--border);
+  border-top: 2px solid rgba(255,255,255,0.5);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.03);
   padding: 10px 12px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 3px;
-  transition: transform var(--transition), border-color var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   font-family: 'Assistant', sans-serif;
   text-align: right;
 }
 
 .def-cat-btn:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.05);
+  border-color: rgba(255,255,255,0.8);
 }
 
 .def-cat-btn.active {
   border-top-color: var(--gold);
-  background: var(--surface-alt);
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 4px 16px rgba(217,119,6,0.10), 0 1px 4px rgba(0,0,0,0.04);
 }
 
 .def-cat-icon { font-size: 1.1rem; }
@@ -51,22 +56,23 @@
 
 /* ===== DEFINITION CARD IN LIST ===== */
 .def-item {
-  background: var(--surface);
+  background: linear-gradient(160deg, #ffffff 55%, #f8f7ff 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   border-top: 2px solid var(--gold);
   overflow: hidden;
   cursor: pointer;
-  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   display: flex;
   flex-direction: column;
 }
 
 .def-item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   border-color: var(--border-hover);
   border-top-color: var(--gold);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+  box-shadow: var(--shadow-md);
 }
 
 /* Diagram thumbnail — fixed height so all titles align in each row */
@@ -102,9 +108,10 @@
 
 /* ===== DEFINITION DETAIL CARD ===== */
 .definition-card {
-  background: var(--surface);
+  background: linear-gradient(160deg, #ffffff 60%, #f8f7ff 100%);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
   padding: 36px 42px;
 }
 
