@@ -40,8 +40,8 @@
 }
 
 .def-cat-icon { font-size: 1.1rem; }
-.def-cat-label { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); }
-.def-cat-count { font-size: 0.72rem; color: var(--text-muted); }
+.def-cat-label { font-size: 0.82rem; font-weight: 500; color: var(--text-primary); }
+.def-cat-count { font-size: 0.72rem; font-weight: 400; color: var(--text-muted); }
 
 @media (max-width: 700px) {
   .def-cat-grid { grid-template-columns: repeat(3, 1fr); }
@@ -98,11 +98,10 @@
 /* Title below thumbnail */
 .def-item-title {
   padding: 10px 12px 12px;
+  font-size: 0.95rem;
   font-weight: 500;
-  font-size: 0.94rem;
+  line-height: 1.5;
   color: var(--text-primary);
-  letter-spacing: -0.005em;
-  line-height: 1.4;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -119,22 +118,21 @@
 
 .definition-card .def-title {
   font-family: 'Frank Ruhl Libre', serif;
-  font-size: 1.9rem;
-  font-weight: 800;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.025em;
-  line-height: 1.15;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
   margin-bottom: 14px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--border);
 }
 
 .definition-card .def-body {
-  font-size: 1.28rem;
-  line-height: 1.95;
-  color: var(--text-secondary);
+  font-size: 1.15rem;
   font-weight: 400;
-  letter-spacing: 0.01em;
+  line-height: 1.9;
+  color: var(--text-secondary);
 }
 
 .definition-card .def-body strong {
