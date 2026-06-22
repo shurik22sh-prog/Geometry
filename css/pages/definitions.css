@@ -79,7 +79,7 @@
 .def-thumb {
   width: 100%;
   height: 160px;
-  background: var(--surface-alt);
+  background: linear-gradient(145deg, rgba(99,102,241,0.06), rgba(255,255,255,0.6));
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -93,6 +93,27 @@
   width: auto;
   height: auto;
   display: block;
+  background: transparent !important;
+}
+
+.def-thumb svg line,
+.def-thumb svg path,
+.def-thumb svg polygon {
+  stroke: #4f52d0;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.def-thumb svg circle {
+  fill: #6366f1;
+  stroke: white;
+  stroke-width: 2;
+}
+
+.def-thumb svg text {
+  font-weight: 500;
+  fill: #374151;
 }
 
 /* Title below thumbnail */
